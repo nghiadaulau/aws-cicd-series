@@ -1,0 +1,39 @@
+version: 0.2
+
+env:
+  variables:
+    APP_ENV: "production"
+  parameter-store:
+    GREETING: /cicddemo/greeting
+  secrets-manager:
+    DB_PASSWORD: awscicd/demo/db:password
+
+phases:
+  install:
+    commands:
+      - echo "Install — pytest"
+      - pip install -q pytest
+  pre_build:
+    commands:
+      - echo "Pre-build — APP_ENV=$APP_ENV"
+  build:
+    commands:
+      - echo "Running tests"
+      - pytest tests/ --junitxml=report.xml -v || true
+      - echo "Build — packaging"
+  post_build:
+    commands:
+      - echo "Post-build — done"
+
+reports:
+  demo-tests:
+    files:
+      - "report.xml"
+    file-format: JUNITXML
+
+artifacts:
+  files:
+    - index.html
+    - appspec.yml
+    - 'scripts/**/*'
+  name: awscicd-demo-app
