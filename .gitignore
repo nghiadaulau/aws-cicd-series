@@ -1,0 +1,19 @@
+# Local build/output
+*.zip
+build/
+dist/
+node_modules/
+__pycache__/
+*.log
+
+# AWS / secrets
+.env
+*.pem
+credentials
+aws-cli-output/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
