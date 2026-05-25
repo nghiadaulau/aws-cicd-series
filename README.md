@@ -1,28 +1,28 @@
-# CI/CD Trên AWS Với Bộ Developer Tools — code & lab
+# CI/CD on AWS with the Developer Tools — code & labs
 
-Code hands-on đi kèm series blog **"CI/CD Trên AWS Với Bộ Developer Tools"** trên [kkloudtarus.net](https://kkloudtarus.net).
+Hands-on code accompanying the blog series **"CI/CD on AWS with the Developer Tools"** on [kkloudtarus.net](https://kkloudtarus.net).
 
-Mỗi thư mục `NN-*` ứng với một bài. Toàn bộ hạ tầng dựng bằng **AWS CLI** (không dùng console), mọi lệnh test thật trên AWS, mỗi bài hands-on có bước dọn dẹp.
+Each `NN-*` directory maps to one article. All infrastructure is built with the **AWS CLI** (no console), every command is run for real on AWS, and every hands-on article has a cleanup step.
 
-## Dịch vụ dùng trong series
+## Services used in this series
 
-| Nhóm | Dịch vụ |
+| Group | Services |
 |---|---|
-| Source | GitHub qua **CodeConnections** (CodeCommit đã đóng với khách mới) |
+| Source | GitHub via **CodeConnections** (CodeCommit is closed to new customers) |
 | Build | **CodeBuild**, **CodeArtifact** |
-| Deploy | **CodeDeploy** (mục tiêu: EC2 + Auto Scaling Group, in-place & blue/green) |
+| Deploy | **CodeDeploy** (target: EC2 + Auto Scaling Group, in-place & blue/green) |
 | Orchestrate | **CodePipeline** |
-| Phụ trợ | S3 (artifact), ECR, IAM, CloudWatch, SNS, EventBridge |
+| Supporting | S3 (artifacts), ECR, IAM, CloudWatch, SNS, EventBridge |
 
-## Yêu cầu
+## Requirements
 
-- AWS CLI v2 đã cấu hình (`aws configure`).
-- Tài khoản AWS (lab bám free-tier khi có thể; EC2/ALB tính tiền theo giờ nên **luôn dọn sau khi thực hành**).
+- AWS CLI v2, configured (`aws configure`).
+- An AWS account (labs stay within the free tier where possible; EC2/ALB bill per hour, so **always clean up after each lab**).
 
-## Lưu ý chi phí
+## Cost note
 
-CodeBuild tính theo phút build, CodePipeline ~ theo pipeline hoạt động, EC2/ALB theo giờ. Dựng lên rồi `cleanup` ngay trong vòng vài chục phút thì chi phí chỉ vài cent. Mỗi bài có script/bước dọn dẹp.
+CodeBuild bills per build-minute, CodePipeline per active pipeline, EC2/ALB per hour. Spin things up and run the `cleanup` steps within a short window and the real cost is a few cents. Every article includes cleanup steps/scripts.
 
 ---
 
-Tác giả: [nghiadaulau](https://github.com/nghiadaulau) · Blog: [kkloudtarus.net](https://kkloudtarus.net)
+Author: [nghiadaulau](https://github.com/nghiadaulau) · Blog: [kkloudtarus.net](https://kkloudtarus.net)
