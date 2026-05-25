@@ -8,7 +8,7 @@ Each `NN-*` directory maps to one article. All infrastructure is built with the 
 
 | Group | Services |
 |---|---|
-| Source | GitHub via **CodeConnections** (CodeCommit is closed to new customers) |
+| Source | **CodeCommit** (AWS-hosted Git) |
 | Build | **CodeBuild**, **CodeArtifact** |
 | Deploy | **CodeDeploy** (target: EC2 + Auto Scaling Group, in-place & blue/green) |
 | Orchestrate | **CodePipeline** |
